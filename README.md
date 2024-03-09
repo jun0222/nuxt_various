@@ -1,8 +1,15 @@
 <!-- TOC -->
 
-- [nuxt_various](#nuxt_various)
+- [nuxtvarious](#nuxtvarious)
+  - [stylelint](#stylelint)
+    - [エラー](#エラー)
   - [commit message のルール](#commit-message-のルール)
   - [Build Setup（デフォルトの README）](#build-setupデフォルトの-readme)
+- [install dependencies](#install-dependencies)
+- [install dependencies](#install-dependencies)
+- [serve with hot reload at localhost:3000](#serve-with-hot-reload-at-localhost3000)
+- [build for production and launch server](#build-for-production-and-launch-server)
+- [generate static project](#generate-static-project)
   - [Special Directories](#special-directories)
     - [`assets`](#assets)
     - [`components`](#components)
@@ -15,6 +22,21 @@
 <!-- /TOC -->
 
 # nuxt_various
+
+## stylelint
+
+### エラー
+
+- VSCode で stylelint がエラーが出ない
+
+  - `.vscode/settings.json` に以下を追加し解決。
+
+  ```json
+  { "stylelint.validate": ["css", "scss", "sass", "html", "vue"] }
+  ```
+
+- Unknown word (CssSyntaxError)Stylelint(CssSyntaxError)
+  - `yarn remove stylelint-config-prettier` で解決。（stylelint.config.js の extends からも削除） [参考](https://github.com/nuxt/create-nuxt-app/issues/1028)
 
 ## commit message のルール
 
