@@ -1,0 +1,4 @@
+{
+  "stylelint.validate": ["css", "scss", "sass", "html", "vue"],
+  "stylelint.enable": true
+}
