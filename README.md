@@ -1,6 +1,38 @@
+<!-- TOC -->
+
+- [nuxt_various](#nuxt_various)
+  - [commit message のルール](#commit-message-のルール)
+  - [Build Setup（デフォルトの README）](#build-setupデフォルトの-readme)
+  - [Special Directories](#special-directories)
+    - [`assets`](#assets)
+    - [`components`](#components)
+    - [`layouts`](#layouts)
+    - [`pages`](#pages)
+    - [`plugins`](#plugins)
+    - [`static`](#static)
+    - [`store`](#store)
+
+<!-- /TOC -->
+
 # nuxt_various
 
-## Build Setup
+## commit message のルール
+
+commitlint によるコミットメッセージのルールを設定しています。
+
+- build: ビルドシステムや外部依存関係の変更
+- chore: 雑用。ビルドプロセスや補助ツールの変更
+- ci: CI の設定やスクリプトの変更
+- docs: ドキュメントのみの変更
+- feat: 新機能の追加
+- fix: バグ修正
+- perf: パフォーマンスを向上させるコードの変更
+- refactor: リファクタリング
+- revert: コードの変更を取り消す
+- style: コードの意味に影響を与えない変更（空白、フォーマット、セミコロンの欠落など）
+- test: テストの追加、変更、削除
+
+## Build Setup（デフォルトの README）
 
 ```bash
 # install dependencies
