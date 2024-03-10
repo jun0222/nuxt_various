@@ -1,15 +1,10 @@
 <!-- TOC -->
 
-- [nuxtvarious](#nuxtvarious)
+- [nuxt\_various](#nuxt_various)
   - [stylelint](#stylelint)
     - [エラー](#エラー)
   - [commit message のルール](#commit-message-のルール)
   - [Build Setup（デフォルトの README）](#build-setupデフォルトの-readme)
-- [install dependencies](#install-dependencies)
-- [install dependencies](#install-dependencies)
-- [serve with hot reload at localhost:3000](#serve-with-hot-reload-at-localhost3000)
-- [build for production and launch server](#build-for-production-and-launch-server)
-- [generate static project](#generate-static-project)
   - [Special Directories](#special-directories)
     - [`assets`](#assets)
     - [`components`](#components)
@@ -34,6 +29,23 @@
   ```json
   { "stylelint.validate": ["css", "scss", "sass", "html", "vue"] }
   ```
+
+- `stylelint.config.js` に以下を追加し解決。
+
+```javascript
+module.exports = {
+  // その他の設定
+  rules: {
+    'declaration-block-no-duplicate-properties': true,
+  },
+}
+```
+
+以下のエラーが出ていたので、従って解決した。
+元々はこの設定がないと言われていたが、未設定だった。
+明示的に設定することで解決した。
+
+![picture 0](images/406e9b123104217be4ef23dad4fae1838c977850a1b40865b1c9b8b1b4480b05.png)
 
 - Unknown word (CssSyntaxError)Stylelint(CssSyntaxError)
   - `yarn remove stylelint-config-prettier` で解決。（stylelint.config.js の extends からも削除） [参考](https://github.com/nuxt/create-nuxt-app/issues/1028)
