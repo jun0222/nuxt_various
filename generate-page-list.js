@@ -24,4 +24,4 @@ function listPages(dir, filelist = []) {
 
 const pagesList = listPages(pagesDirectory)
 fs.writeFileSync(outputFilePath, JSON.stringify(pagesList, null, 2), 'utf8')
-console.log(`Pages list generated at ${outputFilePath}`)
+// console.log(`Pages list generated at ${outputFilePath}`)
