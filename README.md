@@ -93,5 +93,4 @@ commitlint によるコミットメッセージのルールを設定していま
 
 ## todo
 
-- [ ] pages.json を gitignore する
 - [ ] pages.json に index が変に入らないようにする
