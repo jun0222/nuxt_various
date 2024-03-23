@@ -1,6 +1,8 @@
 <!-- TOC -->
 
 - [nuxt_various](#nuxt_various)
+  - [Nuxt.js のタグ](#nuxtjs-のタグ)
+  - [ディレクトリ構成](#ディレクトリ構成)
   - [stylelint](#stylelint)
     - [エラー](#エラー)
   - [commit message のルール](#commit-message-のルール)
@@ -8,6 +10,26 @@
 <!-- /TOC -->
 
 # nuxt_various
+
+## Nuxt.js のタグ
+
+- `<nuxt-link>`: Nuxt.js アプリケーション内でのページ間遷移を効率的に行うためのコンポーネントです。Vue.js の<router-link>に相当し、アプリケーション内の別のページへのリンクを作成する際に使用します。
+- `<Nuxt />`: このコンポーネントは Nuxt.js のレイアウトファイル内で使用され、アプリケーションのページコンポーネントが描画される場所を指定します。主に、レイアウトの共通部分を定義し、ページコンテンツの具体的な描画位置をこのコンポーネントでマークします。
+- `<NuxtChild />`: ネストされたルーティング構造で子ルートコンポーネントを表示するために使用されます。<NuxtChild />は親ページコンポーネント内で定義され、ネストされた子ルートがある場合にそれを描画する役割を持ちます。
+- `<client-only>`: クライアントサイドでのみレンダリングする必要があるコンポーネントを囲むために使用されます。サーバーサイドレンダリングを回避し、クライアントサイドでのみコンポーネントが有効になるようにします。
+- asyncData メソッド: Nuxt.js のページコンポーネントで定義できる特別なメソッドです。このメソッドを使用して、ページがサーバーサイドでレンダリングされる前に非同期でデータを取得し、ページコンポーネントへと渡すことができます。これにより、ページの初期表示時に必要なデータをあらかじめ準備できます。
+
+## ディレクトリ構成
+
+```bash
+layouts
+  default.vue # デフォルトのレイアウト
+  pages
+    index.vue # ルートページ
+    about.vue # /about にマッチするページ
+    users
+      _id.vue # /users/:id にマッチするページ
+```
 
 ## stylelint
 
@@ -39,7 +61,11 @@ module.exports = {
 ![picture 0](images/406e9b123104217be4ef23dad4fae1838c977850a1b40865b1c9b8b1b4480b05.png)
 
 - Unknown word (CssSyntaxError)Stylelint(CssSyntaxError)
+
   - `yarn remove stylelint-config-prettier` で解決。（stylelint.config.js の extends からも削除） [参考](https://github.com/nuxt/create-nuxt-app/issues/1028)
+
+- `Module build failed (from ./node_modules/vue-loader/lib/index.js): Error: ENOENT: no such file or directory, open '/Users/username/Desktop/products-202403-/nuxt_various/pages/aboutid/\_id.vue'`
+  - pages 配下のディレクトリ名を更新したのに、server を再起動していないのが原因。再起動することで解決。
 
 ## commit message のルール
 
