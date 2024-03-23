@@ -1,0 +1,16 @@
+[
+  "about-Id/_id",
+  "about",
+  "index",
+  "inspire",
+  "to-about/index",
+  "vue-method/v-bind",
+  "vue-method/v-cloak",
+  "vue-method/v-for",
+  "vue-method/v-if",
+  "vue-method/v-model",
+  "vue-method/v-on",
+  "vue-method/v-once",
+  "vue-method/v-pre",
+  "vue-method/v-show"
+]
