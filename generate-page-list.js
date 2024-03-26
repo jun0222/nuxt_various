@@ -1,4 +1,3 @@
-// generate-page-list.js
 const fs = require('fs')
 const path = require('path')
 
@@ -15,7 +14,9 @@ function listPages(dir, filelist = []) {
       // ルートディレクトリからの相対パスに変換
       const relativePath = path.relative(pagesDirectory, filePath)
       // ファイルの拡張子を削除
-      const routePath = relativePath.replace(/\.vue$/, '')
+      let routePath = relativePath.replace(/\.vue$/, '')
+      // 最後に /index が含まれている場合、それを削除
+      routePath = routePath.replace(/\/index$/, '')
       filelist.push(routePath)
     }
   })
@@ -24,4 +25,4 @@ function listPages(dir, filelist = []) {
 
 const pagesList = listPages(pagesDirectory)
 fs.writeFileSync(outputFilePath, JSON.stringify(pagesList, null, 2), 'utf8')
-// console.log(`Pages list generated at ${outputFilePath}`)
+// console.log(`Pages list generated at ${outputFilePath}`);

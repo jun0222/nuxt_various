@@ -196,5 +196,3 @@ rm -rf .nuxt && yarn install && yarn dev
 ```
 
 ## todo
-
-- [ ] pages.json に index が変に入らないようにする
