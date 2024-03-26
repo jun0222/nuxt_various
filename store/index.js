@@ -1,27 +1,41 @@
-// pages/memp-app/index.vue
-// import Vuex from 'vuex'
-import createPersistedState from 'vuex-persistedstate'
-
+// todoリスト用のコード
 export const state = () => ({
-  message: 'count number.',
-  counter: 0,
+  todos: [],
 })
 
 export const mutations = {
-  doit(state) {
-    const n = Math.floor(Math.random() * 10)
-    state.counter += n
-    state.message = 'add ' + n + '.'
+  addTodo(state, todo) {
+    state.todos.push(todo)
   },
-  reset(state) {
-    state.counter = 0
-    state.message = 'reset now.'
+  removeTodo(state, todoIndex) {
+    state.todos.splice(todoIndex, 1)
   },
 }
 
-export const plugins = [process.client ? createPersistedState() : null].filter(
-  Boolean
-)
+// // pages/memp-app/index.vue
+// // import Vuex from 'vuex'
+// import createPersistedState from 'vuex-persistedstate'
+
+// export const state = () => ({
+//   message: 'count number.',
+//   counter: 0,
+// })
+
+// export const mutations = {
+//   doit(state) {
+//     const n = Math.floor(Math.random() * 10)
+//     state.counter += n
+//     state.message = 'add ' + n + '.'
+//   },
+//   reset(state) {
+//     state.counter = 0
+//     state.message = 'reset now.'
+//   },
+// }
+
+// export const plugins = [process.client ? createPersistedState() : null].filter(
+//   Boolean
+// )
 
 // ShowVuexExample用のコード
 // import Vuex from 'vuex'
