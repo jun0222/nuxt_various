@@ -1,4 +1,3 @@
-// TODO: typescript 化したいのでPiniaを使う
 import Vuex from 'vuex'
 
 // Vuex ストアを作成する関数
@@ -7,19 +6,39 @@ const createStore = () => {
     // ステート (アプリケーションのデータ) を定義する
     state: function () {
       return {
-        // message というステート変数を定義し、初期値を設定する
-        message: 'Vuexストアのmessageステート変数です。',
+        // メッセージを格納するステート変数
+        message: 'count number.',
+        // カウンターの値を格納するステート変数
+        counter: 0,
       }
     },
 
     // ミューテーション (ステートを変更する関数) を定義する
-    // ※ここでは定義していない
+    mutations: {
+      // カウンターの値を増減させる
+      count: function (state, n) {
+        state.counter += n
+      },
+      // メッセージを更新する
+      say: function (state, msg) {
+        state.message = msg
+      },
+      // カウンターとメッセージをリセットする
+      reset: function (state) {
+        state.counter = 0
+        state.message = 'reset now...'
+      },
+    },
 
     // アクション (非同期処理などを行う関数) を定義する
-    // ※ここでは定義していない
-
-    // ゲッター (ステートから導出されるデータを計算する関数) を定義する
-    // ※ここでは定義していない
+    actions: {
+      // ランダムな値でカウンターを増加させ、メッセージを更新する
+      doit: function (context) {
+        const n = Math.floor(Math.random() * 10)
+        context.commit('count', n)
+        context.commit('say', 'add ' + n + '!')
+      },
+    },
   })
 }
 

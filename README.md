@@ -200,3 +200,6 @@ rm -rf .nuxt && yarn install && yarn dev
 ```
 
 ## todo
+
+- [ ] storybook
+- [ ] cicd か circleci
