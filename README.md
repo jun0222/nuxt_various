@@ -8,6 +8,7 @@
     - [エラー](#エラー)
   - [commit message のルール](#commit-message-のルール)
   - [Vue.js のリポジトリ](#vuejs-のリポジトリ)
+  - [package.json](#packagejson)
   - [todo](#todo)
 
 <!-- /TOC -->
@@ -95,6 +96,93 @@ commitlint によるコミットメッセージのルールを設定していま
 ## Vue.js のリポジトリ
 
 - [vue-todo](https://github.com/jun0222/vue-todo)
+
+## package.json
+
+```js
+{
+  // プロジェクトの名前
+  "name": "nuxt_various",
+  // プロジェクトのバージョン
+  "version": "1.0.0",
+  // プライベートプロジェクトであることを示すフラグ
+  "private": true,
+  // 様々なタスクのスクリプト
+  "scripts": {
+    // 開発モードでプロジェクトを実行
+    "dev": "nuxt",
+    // プロダクションビルドを実行
+    "build": "nuxt build",
+    // プロダクションビルドを起動
+    "start": "nuxt start",
+    // 静的ファイルを生成(プロダクション用)
+    "generate": "nuxt generate",
+    // ESLintを使ってJavaScriptをリント
+    "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    // Stylelintを使ってスタイルをリント
+    "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
+    // Prettierを使ってコード整形をチェック
+    "lint:prettier": "prettier --check .",
+    // すべてのリンターを実行
+    "lint": "yarn lint:js && yarn lint:style && yarn lint:prettier",
+    // リンターによる自動修正を実行
+    "lintfix": "prettier --write --list-different . && yarn lint:js --fix && yarn lint:style --fix",
+    // Gitフックをインストール
+    "prepare": "husky install",
+    // Jestを使ってテストを実行
+    "test": "jest"
+  },
+  // lint-stagedのコミット時リンティング設定
+  "lint-staged": {
+    "*.{js,ts,vue}": "eslint --cache",
+    "*.{css,scss,sass,html,vue}": "stylelint",
+    "*.**": [
+      "prettier --check --ignore-unknown"
+    ]
+  },
+  // プロジェクトの依存ライブラリ
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "core-js": "^3.25.3",
+    "nuxt": "^2.15.8",
+    "vue": "^2.7.10",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10",
+    "vuetify": "^2.6.10"
+  },
+  // 開発時の依存ライブラリ
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/eslint-config-typescript": "^11.0.0",
+    "@nuxtjs/eslint-module": "^3.1.0",
+    "@nuxtjs/stylelint-module": "^4.1.0",
+    "@nuxtjs/vuetify": "^1.12.3",
+    "@vue/test-utils": "^1.3.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^29.1.2",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^27.0.4",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-vue": "^9.5.1",
+    "husky": "^8.0.1",
+    "jest": "^29.1.2",
+    "jest-environment-jsdom": "^29.1.2",
+    "lint-staged": "^13.0.3",
+    "postcss-html": "^1.6.0",
+    "prettier": "^2.7.1",
+    "stylelint": "^16.2.1",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^36.0.0",
+    "ts-jest": "^29.0.3",
+    "vue-jest": "^3.0.4"
+  }
+}
+```
 
 ## todo
 

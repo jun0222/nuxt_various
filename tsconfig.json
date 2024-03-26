@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
-    "esModuleInterop": true,
-    "allowJs": true,
-    "sourceMap": true,
-    "strict": true,
-    "noEmit": true,
-    "experimentalDecorators": true,
-    "baseUrl": ".",
+    "target": "ES2018", // コンパイルされたコードが対象とするECMAScriptのバージョン。ここではES2018をターゲットにしています。
+    "module": "ESNext", // 使用するモジュールの種類。"ESNext"は最新のモジュール機能を使うことを意味します。
+    "moduleResolution": "Node", // モジュール解決戦略。"Node"はNode.jsの解決機構を使うことを意味します。
+    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"], // コンパイルに含めるライブラリのリスト。ここでは最新のES機能と非同期イテレータ、DOMの型定義を含めています。
+    "esModuleInterop": true, // デフォルトのモジュールインポート方法をES6スタイルにするためのフラグ。
+    "allowJs": true, // JavaScriptファイルのコンパイルを許可します。
+    "sourceMap": true, // ソースマップを生成するかどうか。デバッグ時に役立ちます。
+    "strict": true, // すべての厳格な型チェックオプションを有効にします。
+    "noEmit": true, // コンパイル結果を出力しない。型チェックのみを行います。
+    "experimentalDecorators": true, // 実験的なデコレーターを使用できるようにします。
+    "baseUrl": ".", // 非相対モジュール名を解決する際の基本ディレクトリ。
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"]
+      "~/*": ["./*"], // `~/` を使ってプロジェクトルートからの絶対パスとして解決します。
+      "@/*": ["./*"] // `@/` を使ってプロジェクトルートからの絶対パスとして解決します。
     },
-    "types": ["@nuxt/types", "@types/node"]
+    "types": ["@nuxt/types", "@types/node"] // プロジェクトで使用する型定義。Nuxt.jsとNode.jsの型を含めています。
   },
-  "exclude": ["node_modules", ".nuxt", "dist"]
+  "exclude": ["node_modules", ".nuxt", "dist"] // 型チェックやコンパイルから除外するディレクトリ。
 }
