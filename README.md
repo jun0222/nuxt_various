@@ -43,6 +43,10 @@ layouts
 
 ## エラー
 
+- `window is not defined`
+
+  - SSR で window 使おうとしてると起きる
+
 - `Cannot read properties of undefined (reading 'state')`
 
   - `rm -rf .nuxt && yarn install && yarn dev`して解決。`clean:dev`コマンドとして package.json に追加。
