@@ -8,7 +8,7 @@ const createStore = () => {
     state: function () {
       return {
         // message というステート変数を定義し、初期値を設定する
-        message: 'This is store message!',
+        message: 'Vuexストアのmessageステート変数です。',
       }
     },
 

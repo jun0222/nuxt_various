@@ -43,7 +43,11 @@ layouts
 
 ## エラー
 
-- vuex で`store/index.ts`が利用できない
+- `Cannot read properties of undefined (reading 'state')`
+
+  - `rm -rf .nuxt && yarn install && yarn dev`して解決。`clean:dev`コマンドとして package.json に追加。
+
+- vuex で`store/index.ts`が型解決できない（module not found）
 
   - `store/index.ts`を`store/index.js`に変更することで動作した。
   - `nuxt-typed-vuex`を利用するも中々うまくいかず。

@@ -6,6 +6,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
+    "clean:dev": "rm -rf .nuxt && yarn install && yarn dev",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
