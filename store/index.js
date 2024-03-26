@@ -1,3 +1,4 @@
+// TODO: typescript 化したいのでPiniaを使う
 import Vuex from 'vuex'
 
 // Vuex ストアを作成する関数

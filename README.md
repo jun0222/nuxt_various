@@ -4,11 +4,11 @@
   - [Nuxt.js, Vue.js のタグ](#nuxtjs-vuejs-のタグ)
   - [Vue.js のメソッド](#vuejs-のメソッド)
   - [ディレクトリ構成](#ディレクトリ構成)
-  - [stylelint](#stylelint)
-    - [エラー](#エラー)
+  - [エラー](#エラー)
   - [commit message のルール](#commit-message-のルール)
   - [Vue.js のリポジトリ](#vuejs-のリポジトリ)
   - [package.json](#packagejson)
+  - [コマンド](#コマンド)
   - [todo](#todo)
 
 <!-- /TOC -->
@@ -41,9 +41,13 @@ layouts
       _id.vue # /users/:id にマッチするページ
 ```
 
-## stylelint
+## エラー
 
-### エラー
+- vuex で`store/index.ts`が利用できない
+
+  - `store/index.ts`を`store/index.js`に変更することで動作した。
+  - `nuxt-typed-vuex`を利用するも中々うまくいかず。
+  - リサーチして vuex と ts が相性悪いと発覚。`Pinia`の方が ts と相性が良さそうなので js のまま保留
 
 - VSCode で stylelint がエラーが出ない
 
@@ -182,6 +186,13 @@ commitlint によるコミットメッセージのルールを設定していま
     "vue-jest": "^3.0.4"
   }
 }
+```
+
+## コマンド
+
+```bash
+# 色々入れ直し
+rm -rf .nuxt && yarn install && yarn dev
 ```
 
 ## todo
