@@ -1,12 +1,13 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
 
 const pagesDirectory = path.join(__dirname, 'pages')
 const outputFilePath = path.join(__dirname, 'static', 'pages.json')
 
-function listPages(dir, filelist = []) {
+function listPages(dir: string, filelist: string[] = []): string[] {
   const files = fs.readdirSync(dir)
-  files.forEach(function (file) {
+
+  files.forEach((file) => {
     if (fs.statSync(path.join(dir, file)).isDirectory()) {
       filelist = listPages(path.join(dir, file), filelist)
     } else if (path.extname(file) === '.vue') {
@@ -20,9 +21,11 @@ function listPages(dir, filelist = []) {
       filelist.push(routePath)
     }
   })
+
   return filelist
 }
 
 const pagesList = listPages(pagesDirectory)
 fs.writeFileSync(outputFilePath, JSON.stringify(pagesList, null, 2), 'utf8')
+
 // console.log(`Pages list generated at ${outputFilePath}`);
