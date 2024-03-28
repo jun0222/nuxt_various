@@ -201,9 +201,17 @@ commitlint によるコミットメッセージのルールを設定していま
 ```bash
 # 色々入れ直し
 rm -rf .nuxt && yarn install && yarn dev
+
+# yarn.lock と node_modules を削除して再インストール
+rm -rf node_modules yarn.lock && yarn install
 ```
 
 ## todo
 
 - [ ] storybook
-- [ ] cicd か circleci
+- [ ] cicd circleci
+- [ ] [6:06:33 PM] ERROR (node:79242) [stylelint:002] DeprecationWarning: The CommonJS Node.js API is deprecated. See https://stylelint.io/migration-guide/to-16
+- [ ] ディレクトリ構成
+- [ ] jsonserver
+- [ ] todo リストを進化させていく
+- [ ] 環境変数
