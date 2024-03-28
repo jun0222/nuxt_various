@@ -43,6 +43,10 @@ layouts
 
 ## エラー
 
+- yarn dev で`Cannot find module 'json-server' Require stack: - /Users/username/Desktop/products-202403-/nuxt_various/server/index.js`
+
+  - `serverMiddleware: ['~/server/index.js'],` を nuuxt.config.js に記載していたので、json-server のための記述は package.json に記載することで解決。
+
 - `window is not defined`
 
   - SSR で window 使おうとしてると起きる

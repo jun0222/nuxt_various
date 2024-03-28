@@ -38,7 +38,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/axios'],
-  serverMiddleware: ['~/server/index.js'],
+  // serverMiddleware: ['~/server/index.js'], // これを記述すると、yarn devでも実行されるので、json-serverを使うための記述はpackage.jsonのscriptsに記述する
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
