@@ -9,7 +9,7 @@ const ORIGINAL_DB_FILE = path.resolve(
   '..',
   'server',
   'api',
-  'db.source.json'
+  'db.save.json'
 )
 
 describe('JSON Server', () => {
