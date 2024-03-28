@@ -16,7 +16,7 @@
     "prepare": "husky install",
     "test": "echo server側のテストのためにjson-serverを起動してください && jest",
     "clean": "rm -rf node_modules yarn.lock && yarn install",
-    "start:json-server": "json-server --watch ./server/api/db.json --port 3001"
+    "start:json-server": "node server/index.js"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint --cache",
@@ -28,7 +28,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.25.3",
-    "json-server": "^1.0.0-alpha.23",
+    "json-server": "0.17.4",
     "nuxt": "^2.15.8",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",

@@ -43,6 +43,18 @@ layouts
 
 ## エラー
 
+- `index.js`定義のカスタムルートが機能しない
+
+  - node で実行するよう変更して解決。
+
+- `"Unknown option '--routes'"`で json-server が起動しない
+
+  - [github の issue](https://github.com/typicode/json-server/issues/1512)を参考にし、1 系ではなく 0 系にダウングレードして解決
+
+- cli から直接 json-server を起動できない
+
+  - グローバルインストールしていないので、yarn から実行する必要があった。package.json に記述。
+
 - yarn dev で`Cannot find module 'json-server' Require stack: - /Users/username/Desktop/products-202403-/nuxt_various/server/index.js`
 
   - `serverMiddleware: ['~/server/index.js'],` を nuuxt.config.js に記載していたので、json-server のための記述は package.json に記載することで解決。

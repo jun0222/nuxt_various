@@ -1,47 +1,85 @@
 <template>
   <div>
-    <!-- v-model を使って入力値を data の newTodo に双方向バインディング -->
-    <!-- @keyup.enter を使って Enter キーが押された時に addTodo メソッドを実行 -->
     <input v-model="newTodo" @keyup.enter="addTodo" />
-
+    <button @click="removeAllTodos">全削除</button>
     <ul>
-      <!-- v-for を使って todos 配列の要素を li でレンダリング -->
-      <!-- :key を使って要素の一意性を確保 -->
-      <li v-for="(todo, index) in todos" :key="index">
-        <!-- todo の値を表示 -->
-        {{ todo }}
-        <!-- @click を使ってボタンがクリックされた時に removeTodo メソッドを実行 -->
-        <button @click="removeTodo(index)">削除</button>
+      <li v-for="todo in todos" :key="todo.id">
+        <input
+          v-model="todo.title"
+          type="text"
+          @keyup.enter="updateTodo(todo)"
+        />
+        <button @click="removeTodo(todo.id)">削除</button>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data() {
     return {
-      // 新しいTodoアイテムを入力するための状態
+      todos: [],
       newTodo: '',
     }
   },
-  computed: {
-    // Vuex ストアから todos 状態を取得
-    todos() {
-      return this.$store.state.todos
-    },
+  mounted() {
+    this.fetchTodos()
   },
   methods: {
-    // 新しいTodoアイテムをVuexストアに追加するメソッド
-    addTodo() {
-      if (this.newTodo.trim()) {
-        this.$store.commit('addTodo', this.newTodo)
-        this.newTodo = ''
+    async fetchTodos() {
+      try {
+        const response = await axios.get('http://localhost:3001/path/to/todos')
+        this.todos = response.data
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error('Error fetching todos:', error)
       }
     },
-    // Vuex ストアから指定したインデックスのTodoアイテムを削除するメソッド
-    removeTodo(index) {
-      this.$store.commit('removeTodo', index)
+    async addTodo() {
+      if (this.newTodo.trim()) {
+        try {
+          const response = await axios.post(
+            'http://localhost:3001/path/to/todos',
+            {
+              title: this.newTodo,
+            }
+          )
+          this.todos.push(response.data)
+          this.newTodo = ''
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          console.error('Error adding todo:', error)
+        }
+      }
+    },
+    async updateTodo(todo) {
+      try {
+        await axios.put(`http://localhost:3001/path/to/todos/${todo.id}`, todo)
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error('Error updating todo:', error)
+      }
+    },
+    async removeTodo(id) {
+      try {
+        await axios.delete(`http://localhost:3001/path/to/todos/${id}`)
+        this.todos = this.todos.filter((todo) => todo.id !== id)
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error('Error removing todo:', error)
+      }
+    },
+    async removeAllTodos() {
+      try {
+        await axios.delete('http://localhost:3001/path/to/todos')
+        this.todos = []
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error('Error removing all todos:', error)
+      }
     },
   },
 }

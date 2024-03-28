@@ -1,0 +1,4 @@
+{
+  "/path/to/todos": "/todos",
+  "/path/to/todos/:id": "/todos/:id"
+}
