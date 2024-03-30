@@ -3,7 +3,7 @@ import path from 'path'
 import axios from 'axios'
 const BASE_URL = 'http://localhost:3001'
 const DB_FILE = path.resolve(__dirname, '..', '..', 'server', 'api', 'db.json')
-const ORIGINAL_DB_FILE = path.resolve(
+const DB_FILE_SAVE = path.resolve(
   __dirname,
   '..',
   '..',
@@ -13,20 +13,20 @@ const ORIGINAL_DB_FILE = path.resolve(
 )
 
 describe('JSON Server', () => {
-  // テスト前にオリジナルのデータをバックアップ
+  // テスト前に保存したデータをバックアップ
   beforeAll(() => {
-    fs.copyFileSync(DB_FILE, ORIGINAL_DB_FILE)
+    fs.copyFileSync(DB_FILE, DB_FILE_SAVE)
   })
 
   // 各テストの前にデータをリセット
   beforeEach(() => {
-    fs.copyFileSync(ORIGINAL_DB_FILE, DB_FILE)
+    fs.copyFileSync(DB_FILE_SAVE, DB_FILE)
   })
 
-  // テスト後にオリジナルのデータを復元
+  // テスト後に保存したデータを復元
   afterAll(() => {
-    fs.copyFileSync(ORIGINAL_DB_FILE, DB_FILE)
-    fs.unlinkSync(ORIGINAL_DB_FILE)
+    fs.copyFileSync(DB_FILE_SAVE, DB_FILE)
+    fs.unlinkSync(DB_FILE_SAVE)
   })
 
   // Users

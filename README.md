@@ -43,6 +43,10 @@ layouts
 
 ## エラー
 
+- node で起動した jest で db.json のデータが残り、冪等なテストができない
+
+  - 根本的にはプロセスを kill する必要があるが、その点の注意書きをテストコマンドで出力することに。
+
 - jest が動かない
 
   - `"@vue/test-utils": "2~~~",`で Vue3 用を使っていた
@@ -237,6 +241,11 @@ yarn add --dev @vue/test-utils jest vue-jest babel-jest @babel/preset-env @babel
 - [ ] [6:06:33 PM] ERROR (node:79242) [stylelint:002] DeprecationWarning: The CommonJS Node.js API is deprecated. See https://stylelint.io/migration-guide/to-16
 - [ ] ディレクトリ構成
 - [ ] todo リストを進化させていく
+
+  - [ ] hooks
+  - [ ] composition-api
+  - [ ] login
+
 - [ ] 環境変数
 - [ ] graphql
 - [ ] vuetify でのデザイン
