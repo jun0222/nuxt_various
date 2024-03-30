@@ -1,6 +1,6 @@
 <!-- TOC -->
 
-- [nuxt_various](#nuxt_various)
+- [nuxtvarious](#nuxtvarious)
   - [Nuxt.js, Vue.js のタグ](#nuxtjs-vuejs-のタグ)
   - [Vue.js のメソッド](#vuejs-のメソッド)
   - [ディレクトリ構成](#ディレクトリ構成)
@@ -9,6 +9,9 @@
   - [Vue.js のリポジトリ](#vuejs-のリポジトリ)
   - [package.json](#packagejson)
   - [コマンド](#コマンド)
+- [色々入れ直し](#色々入れ直し)
+- [色々入れ直し](#色々入れ直し)
+- [yarn.lock と nodemodules を削除して再インストール](#yarnlock-と-nodemodules-を削除して再インストール)
   - [todo](#todo)
 
 <!-- /TOC -->
@@ -228,6 +231,8 @@ rm -rf node_modules yarn.lock && yarn install
 - [ ] cicd circleci
 - [ ] [6:06:33 PM] ERROR (node:79242) [stylelint:002] DeprecationWarning: The CommonJS Node.js API is deprecated. See https://stylelint.io/migration-guide/to-16
 - [ ] ディレクトリ構成
-- [ ] jsonserver
 - [ ] todo リストを進化させていく
 - [ ] 環境変数
+- [ ] graphql
+- [ ] vuetify でのデザイン
+- [ ] express

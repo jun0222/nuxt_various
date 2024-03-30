@@ -1,16 +1,16 @@
 <template>
   <section>
-    <h1>ToDoリスト</h1>
-    <TodoList />
+    <h1>ToDoリスト シングルページ</h1>
+    <TodoSingle />
   </section>
 </template>
 
 <script>
-import TodoList from '~/components/TodoList'
+import TodoSingle from '~/components/TodoSingle/TodoSingle.vue'
 
 export default {
   components: {
-    TodoList,
+    TodoSingle,
   },
 }
 </script>
