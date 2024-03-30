@@ -17,8 +17,10 @@
 
 <script>
 import axios from 'axios'
+import Vue from 'vue'
 
-export default {
+export default Vue.extend({
+  name: 'TodoSingle',
   data() {
     return {
       todos: [],
@@ -82,7 +84,7 @@ export default {
       }
     },
   },
-}
+})
 </script>
 
 <style scoped>

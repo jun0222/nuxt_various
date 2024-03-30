@@ -1,6 +1,6 @@
 <!-- TOC -->
 
-- [nuxtvarious](#nuxtvarious)
+- [nuxt_various](#nuxt_various)
   - [Nuxt.js, Vue.js のタグ](#nuxtjs-vuejs-のタグ)
   - [Vue.js のメソッド](#vuejs-のメソッド)
   - [ディレクトリ構成](#ディレクトリ構成)
@@ -9,9 +9,6 @@
   - [Vue.js のリポジトリ](#vuejs-のリポジトリ)
   - [package.json](#packagejson)
   - [コマンド](#コマンド)
-- [色々入れ直し](#色々入れ直し)
-- [色々入れ直し](#色々入れ直し)
-- [yarn.lock と nodemodules を削除して再インストール](#yarnlock-と-nodemodules-を削除して再インストール)
   - [todo](#todo)
 
 <!-- /TOC -->
@@ -45,6 +42,11 @@ layouts
 ```
 
 ## エラー
+
+- jest が動かない
+
+  - `"@vue/test-utils": "2~~~",`で Vue3 用を使っていた
+    - GPT で必要事項をヒアリングしてもらい、依存関係の一貫性を担保
 
 - `index.js`定義のカスタムルートが機能しない
 
@@ -223,6 +225,9 @@ rm -rf .nuxt && yarn install && yarn dev
 
 # yarn.lock と node_modules を削除して再インストール
 rm -rf node_modules yarn.lock && yarn install
+
+# テストライブラリの追加と axios-mock-adapter の追加
+yarn add --dev @vue/test-utils jest vue-jest babel-jest @babel/preset-env @babel/core && yarn add --dev axios-mock-adapter
 ```
 
 ## todo

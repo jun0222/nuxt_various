@@ -15,7 +15,7 @@
       "~/*": ["./*"], // `~/` を使ってプロジェクトルートからの絶対パスとして解決します。
       "@/*": ["./*"] // `@/` を使ってプロジェクトルートからの絶対パスとして解決します。
     },
-    "types": ["@nuxt/types", "@types/node"] // プロジェクトで使用する型定義。Nuxt.jsとNode.jsの型を含めています。
+    "types": ["@nuxt/types", "@types/node", "@types/jest", "@types/mocha"] // プロジェクトで使用する型定義。Nuxt.jsとNode.jsの型を含めています。
   },
   "exclude": ["node_modules", ".nuxt", "dist"] // 型チェックやコンパイルから除外するディレクトリ。
 }
