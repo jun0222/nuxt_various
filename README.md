@@ -1,19 +1,36 @@
+## 目次
+
 <!-- TOC -->
 
-- [nuxt_various](#nuxt_various)
-  - [Nuxt.js, Vue.js のタグ](#nuxtjs-vuejs-のタグ)
-  - [Vue.js のメソッド](#vuejs-のメソッド)
-  - [ディレクトリ構成](#ディレクトリ構成)
-  - [エラー](#エラー)
-  - [commit message のルール](#commit-message-のルール)
-  - [Vue.js のリポジトリ](#vuejs-のリポジトリ)
-  - [package.json](#packagejson)
-  - [コマンド](#コマンド)
+    - [目次](#目次)
+    - [composition-api](#composition-api)
+    - [Nuxt.js, Vue.js のタグ](#nuxtjs-vuejs-のタグ)
+    - [Vue.js のメソッド](#vuejs-のメソッド)
+    - [ディレクトリ構成](#ディレクトリ構成)
+    - [エラー](#エラー)
+    - [commit message のルール](#commit-message-のルール)
+    - [Vue.js のリポジトリ](#vuejs-のリポジトリ)
+    - [package.json](#packagejson)
+    - [コマンド](#コマンド)
+
+- [色々入れ直し](#色々入れ直し)
+- [色々入れ直し](#色々入れ直し)
+- [yarn.lock と nodemodules を削除して再インストール](#yarnlock-と-nodemodules-を削除して再インストール)
+- [テストライブラリの追加と axios-mock-adapter の追加](#テストライブラリの追加と-axios-mock-adapter-の追加)
   - [todo](#todo)
 
 <!-- /TOC -->
 
-# nuxt_various
+## composition-api
+
+0->1 で初めてなので、生成 AI に聞くだけでは無理だった。ずっとハマって未解決。  
+公式ドキュメントを見て、それでもわからなかったから github を clone して試す。
+~~node が新すぎた？~~  
+github でもあまり参考にならなかったので、最小単位（1 ファイルでとりあえず composition-api を使ってみる）で試すことにした。  
+動作。最小単位から試す。できるだけ小さく分解することが大事。そういう妥協案、回り道の引き出しを増やす。  
+`components/CompositionExample/CompositionExample.vue`に記述。
+
+https://composition-api.nuxtjs.org/getting-started/setup
 
 ## Nuxt.js, Vue.js のタグ
 
