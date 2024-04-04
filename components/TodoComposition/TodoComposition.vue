@@ -15,24 +15,14 @@
   </div>
 </template>
 
-<script>
-import { ref } from '@nuxtjs/composition-api'
+<script lang="ts">
+import useTodo from '~/composables/useTodo'
 
 export default {
+  name: 'TodoComposition',
   setup() {
-    const todos = ref([])
-    const newTodo = ref('')
-
-    const addTodo = () => {
-      if (newTodo.value.trim()) {
-        todos.value.push(newTodo.value)
-        newTodo.value = ''
-      }
-    }
-
-    const removeTodo = (index) => {
-      todos.value.splice(index, 1)
-    }
+    // useTodoコンポジション関数からロジックを取得
+    const { todos, newTodo, addTodo, removeTodo } = useTodo()
 
     return {
       todos,

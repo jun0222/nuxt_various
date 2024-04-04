@@ -1,3 +1,8 @@
+## ?vue&type=script&lang=ts
+
+[issue](https://github.com/nuxt/nuxt/issues/8015)があって、眺めていてたら typescript-build のバージョンで解決しそうだったので、  
+2 系から 3 系にして解決。
+
 ## shallowMount のエラー
 
 `Vue.extend`でエクスポートしないといけない
