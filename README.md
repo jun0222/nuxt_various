@@ -1,7 +1,13 @@
 ## ?vue&type=script&lang=ts
 
-[issue](https://github.com/nuxt/nuxt/issues/8015)があって、眺めていてたら typescript-build のバージョンで解決しそうだったので、  
-2 系から 3 系にして解決。
+- [issue](https://github.com/nuxt/nuxt/issues/8015)があって、眺めていてたら typescript-build のバージョンで解決しそうだったので、  
+  2 系から 3 系にして解決。
+- 一気に composition-api と todo リストを作成しようとすると、エラーが多発し解決不可だった。
+- かなり小さく段階を刻んで実装した。
+  - composition-api だけシングルページで作るアプリ
+  - composition-api で api 呼び出しもしないシングルページの todo アプリ、同じファイルにロジック記述
+  - composition-api で別ファイルにしたロジックを呼び出す todo アプリ
+- というふうに進んだ。実際のプロジェクトでもできるだけ細かく切り出して検証することが、結局近道。
 
 ## shallowMount のエラー
 
