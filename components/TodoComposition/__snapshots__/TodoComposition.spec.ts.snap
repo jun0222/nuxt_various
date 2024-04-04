@@ -8,13 +8,15 @@ exports[`TodoComposition.vue スナップショットテスト 1`] = `
    
   <input
     placeholder="新しいTodoを追加"
+    style="background-color: white;"
   />
    
   <ul>
     <li>
-      
-      []
-      
+      <input
+        style="background-color: white;"
+      />
+       
       <button>
         削除
       </button>
