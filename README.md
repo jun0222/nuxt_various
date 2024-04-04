@@ -1,25 +1,31 @@
-## 目次
+## shallowMount のエラー
 
-<!-- TOC -->
+`Vue.extend`でエクスポートしないといけない
 
-    - [目次](#目次)
-    - [composition-api](#composition-api)
-    - [Nuxt.js, Vue.js のタグ](#nuxtjs-vuejs-のタグ)
-    - [Vue.js のメソッド](#vuejs-のメソッド)
-    - [ディレクトリ構成](#ディレクトリ構成)
-    - [エラー](#エラー)
-    - [commit message のルール](#commit-message-のルール)
-    - [Vue.js のリポジトリ](#vuejs-のリポジトリ)
-    - [package.json](#packagejson)
-    - [コマンド](#コマンド)
+```vue
+<!-- NG -->
+export default { name: 'HelloWorld', components: { HelloWorld: () =>
+import('~/components/HelloWorld.vue'), }, };
+```
 
-- [色々入れ直し](#色々入れ直し)
-- [色々入れ直し](#色々入れ直し)
-- [yarn.lock と nodemodules を削除して再インストール](#yarnlock-と-nodemodules-を削除して再インストール)
-- [テストライブラリの追加と axios-mock-adapter の追加](#テストライブラリの追加と-axios-mock-adapter-の追加)
-  - [todo](#todo)
+```vue
+<!-- OK -->
+export default Vue.extend({ name: 'HelloWorld', components: { HelloWorld: () =>
+import('~/components/HelloWorld.vue'), }, });
+```
 
-<!-- /TOC -->
+## テスト実行コマンド
+
+```bash
+# コンポーネントのテスト
+yarn test:components
+
+# server/配下のテスト
+. it-server.sh
+
+# 全体通す結合テスト
+. it.sh
+```
 
 ## composition-api
 
@@ -267,3 +273,6 @@ yarn add --dev @vue/test-utils jest vue-jest babel-jest @babel/preset-env @babel
 - [ ] graphql
 - [ ] vuetify でのデザイン
 - [ ] express
+- [ ] shellscript を makefile に
+- [ ] E2E
+- [ ] snapshot テスト

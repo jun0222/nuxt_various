@@ -1,22 +1,10 @@
-#!/bin/bash
+yarn start:json-server & sleep 5 && yarn test:server
 
-# json-serverを指定のポートでバックグラウンドで起動
-yarn start:json-server &
-
-# 少し待機してjson-serverが起動するのを待つ
-sleep 5
-
-# テスト実行
-yarn test
-
-# 特定のポートを使用しているプロセスのPIDを見つけて終了
 PID=$(lsof -ti:3001)
 if [ ! -z "$PID" ]; then
   echo "Stopping json-server running on port 3001..."
   kill -9 $PID
 fi
-
-
 
 echo "□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□"
 echo "■■■■■□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□"

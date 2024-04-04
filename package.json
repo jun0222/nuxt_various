@@ -15,6 +15,8 @@
     "lintfix": "prettier --write --list-different . && yarn lint:js --fix && yarn lint:style --fix",
     "prepare": "husky install",
     "test": "echo server側のテストのためにjson-serverを起動してください、またdbのデータが残るためテスト後にjson-serverは終了してください。 && jest",
+    "test:components": "jest --testPathPattern=components/",
+    "test:server": "jest --testPathPattern=server/",
     "test:no-cache": "echo server側のテストのためにjson-serverを起動してください && jest --clearCache",
     "clean": "rm -rf node_modules yarn.lock && yarn install",
     "start:json-server": "node server/index.js"

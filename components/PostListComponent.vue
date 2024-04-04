@@ -7,7 +7,11 @@
 </template>
 
 <script>
-export default {
+// Vueコンポーネントを作成するためにVueをインポートします
+import Vue from 'vue'
+
+export default Vue.extend({
+  // name: 'PostListComponent', // なくても良い
   // コンポーネントに渡されるpropsの定義
   props: {
     // posts: 投稿の配列。必須。
@@ -16,5 +20,5 @@ export default {
       required: true, // 必須フラグはtrue
     },
   },
-}
+})
 </script>
