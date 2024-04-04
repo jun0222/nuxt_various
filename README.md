@@ -1,3 +1,7 @@
+## スナップショットテストの更新
+
+スナップショットファイルを削除して、テスト実行し現在のものを再生成
+
 ## ?vue&type=script&lang=ts
 
 - [issue](https://github.com/nuxt/nuxt/issues/8015)があって、眺めていてたら typescript-build のバージョンで解決しそうだったので、  
@@ -276,14 +280,14 @@ yarn add --dev @vue/test-utils jest vue-jest babel-jest @babel/preset-env @babel
 - [ ] ディレクトリ構成
 - [ ] todo リストを進化させていく
 
-  - [ ] hooks
-  - [ ] composition-api
   - [ ] login
+  - [ ] nuxt でページ分けするパターン
 
-- [ ] 環境変数
+- [ ] 環境変数 .env
 - [ ] graphql
 - [ ] vuetify でのデザイン
 - [ ] express
 - [ ] shellscript を makefile に
 - [ ] E2E
 - [ ] snapshot テスト
+- [ ] 別リポジトリに react-native, deployGate
