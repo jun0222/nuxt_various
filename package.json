@@ -18,6 +18,8 @@
     "test:components": "jest --testPathPattern=components/",
     "test:server": "jest --testPathPattern=server/",
     "test:no-cache": "echo server側のテストのためにjson-serverを起動してください && jest --clearCache",
+    "it": ". it.sh",
+    "its": ". it-server.sh",
     "clean": "rm -rf node_modules yarn.lock && yarn install",
     "start:json-server": "node server/index.js"
   },
