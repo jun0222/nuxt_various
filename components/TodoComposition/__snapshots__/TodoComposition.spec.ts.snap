@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoComposition.vue スナップショットテスト 1`] = `
+<div>
+  <h1>
+    Todoリスト
+  </h1>
+   
+  <input
+    placeholder="新しいTodoを追加"
+  />
+   
+  <ul>
+    <li>
+      
+      []
+      
+      <button>
+        削除
+      </button>
+    </li>
+  </ul>
+</div>
+`;
