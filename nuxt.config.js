@@ -6,7 +6,7 @@ export default {
     titleTemplate: '%s - nuxt_various',
     title: 'nuxt_various',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },
@@ -17,6 +17,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  srcDir: 'src/',
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 

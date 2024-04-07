@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import TodoSingle from '~/components/TodoSingle/TodoSingle.vue'
+// FIXME: 絶対パスでインポートする
+import TodoSingle from '../../../components/TodoSingle/TodoSingle.vue'
 
 export default {
   components: {

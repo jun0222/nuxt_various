@@ -21,7 +21,8 @@
 </template>
 
 <script lang="ts">
-import useTodo from '~/composables/useTodo'
+//  FIXME: 絶対パスでインポートする
+import useTodo from '../../composables/useTodo'
 
 export default {
   name: 'TodoComposition',

@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import PostListComponent from '~/components/PostListComponent/PostListComponent.vue'
+// FIXME: 絶対パスでインポートする
+import PostListComponent from '../../components/PostListComponent/PostListComponent.vue'
 
 export default {
   components: {

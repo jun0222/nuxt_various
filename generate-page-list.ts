@@ -1,8 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 
-const pagesDirectory = path.join(__dirname, 'pages')
-const outputFilePath = path.join(__dirname, 'static', 'pages.json')
+const pagesDirectory = path.join(__dirname, 'src', 'pages')
+const outputFilePath = path.join(__dirname, 'src', 'static', 'pages.json')
 
 function listPages(dir: string, filelist: string[] = []): string[] {
   const files = fs.readdirSync(dir)
