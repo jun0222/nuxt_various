@@ -1,3 +1,23 @@
+## storybook 導入
+
+- https://zenn.dev/sengosha/articles/85ac4dc731f692
+  - ここの内容からスタート
+- https://stackoverflow.com/questions/69178977/storybook-run-problem-how-can-i-solve-it
+  - バージョン？とインスピレーションをくれたリンク
+
+```bash
+yarn add --dev @nuxtjs/storybook postcss@latest
+yarn remove @nuxtjs/storybook
+yarn add --dev @nuxtjs/storybook@^3.3.1
+yarn add --dev ts-node
+yarn clean
+
+# yarn nuxt storybook でもいける？
+npx nuxt-storybook
+```
+
+※ 一応起動できたが、かなり重かったり yarn で起動できていないなど課題あり
+
 ## src/配下へのリファクタ
 
 - `srcDir: src/`にしているがうまくいかなかったので、1 つ戻す

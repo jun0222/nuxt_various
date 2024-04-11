@@ -90,3 +90,6 @@ sw.*
 *.swp
 
 /static/pages.json
+
+.nuxt-storybook
+storybook-static
